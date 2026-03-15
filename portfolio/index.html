@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muhammad Abid · portfolio</title>
+  <!-- Font Awesome 6 (free) for icons & tech symbols -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* ===== RESET & GLOBAL ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #0b0f17;
+      font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+      line-height: 1.5;
+      color: #e0e4f0;
+      scroll-behavior: smooth;
+    }
+
+    h1, h2, h3, .nav-links a {
+      font-family: 'Inter', 'Helvetica Neue', sans-serif;
+      font-weight: 600;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* ===== TERMINAL / CYBER ACCENTS ===== */
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 2.5rem;
+      position: relative;
+      display: inline-block;
+      color: #b2f0c0;
+      letter-spacing: -0.02em;
+      font-family: 'Fira Code', 'Inter', monospace;
+      border-right: 3px solid #3dd68c;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: cursorBlink 1s step-end infinite;
+    }
+
+    @keyframes cursorBlink {
+      0%, 100% { border-color: #3dd68c; }
+      50% { border-color: transparent; }
+    }
+
+    /* glitch effect (subtle) */
+    .glitch-text {
+      color: #c5f0d0;
+      text-shadow: 0.05em 0 0 rgba(255,0,0,0.3), -0.05em -0.025em 0 rgba(0,255,0,0.3);
+      animation: glitch 5s infinite;
+    }
+
+    @keyframes glitch {
+      0%, 100% { transform: none; opacity: 1; }
+      7% { transform: skew(0.5deg, -0.3deg); opacity: 0.9; }
+      10% { transform: none; }
+    }
+
+    /* ===== HEADER / NAV ===== */
+    header {
+      background: #0f1623ee;
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #2a3a55;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 0;
+    }
+
+    .logo a {
+      font-size: 2rem;
+      font-weight: 700;
+      text-decoration: none;
+      color: #3dd68c;
+      font-family: 'Fira Code', monospace;
+      background: #1a2637;
+      padding: 0.2rem 1rem;
+      border-radius: 6px;
+      border: 1px solid #3dd68c;
+      box-shadow: 0 0 8px #3dd68c55;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.8rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #bcc9f0;
+      transition: color 0.2s, text-shadow 0.2s;
+      font-size: 1.05rem;
+      letter-spacing: 0.3px;
+    }
+
+    .nav-links a:hover {
+      color: #3dd68c;
+      text-shadow: 0 0 6px #3dd68c;
+    }
+
+    /* ===== HERO SECTION ===== */
+    .hero {
+      padding: 5rem 0 4rem 0;
+      background: linear-gradient(135deg, #0b0f17 0%, #141d2f 100%);
+      border-bottom: 1px solid #2e3f5a;
+    }
+
+    .hero-content {
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-text {
+      flex: 1 1 300px;
+    }
+
+    .hero-text .greeting {
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: #b2f0c0;
+      margin-bottom: 0.5rem;
+      font-family: 'Fira Code', monospace;
+    }
+
+    .hero-text h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      line-height: 1.2;
+      color: #eef5ff;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-text h1 span {
+      color: #3dd68c;
+      border-bottom: 3px solid #3dd68c;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    .hero-desc {
+      font-size: 1.2rem;
+      color: #b0bedd;
+      max-width: 600px;
+      margin-bottom: 2.2rem;
+      font-family: 'Fira Code', monospace;
+      background: #0e1622cc;
+      padding: 1rem 1.5rem;
+      border-left: 4px solid #3dd68c;
+      border-radius: 0 12px 12px 0;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.9rem 2.2rem;
+      border-radius: 6px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      font-size: 1rem;
+      border: 1px solid transparent;
+      font-family: 'Fira Code', monospace;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .btn.primary {
+      background: #1e2b3f;
+      color: #3dd68c;
+      border: 1px solid #3dd68c;
+      box-shadow: 0 0 12px #3dd68c55;
+    }
+
+    .btn.primary:hover {
+      background: #263850;
+      box-shadow: 0 0 18px #3dd68c;
+      transform: translateY(-2px);
+    }
+
+    .btn.outline {
+      background: transparent;
+      border-color: #b2f0c0;
+      color: #b2f0c0;
+    }
+
+    .btn.outline:hover {
+      background: #b2f0c022;
+      border-color: #3dd68c;
+      color: #3dd68c;
+    }
+
+    /* ===== UPDATED: Hero Avatar with YOUR IMAGE ===== */
+    .hero-avatar {
+      flex: 0 0 280px;
+    }
+
+    .avatar-frame {
+      width: 100%;
+      aspect-ratio: 1/1;
+      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; /* Organic, techy shape */
+      border: 4px solid #3dd68c;
+      box-shadow: 0 0 30px #3dd68c99, 0 20px 30px -10px black;
+      overflow: hidden;
+      background: #1a2637;
+      transition: transform 0.3s ease;
+    }
+
+    .avatar-frame:hover {
+      transform: scale(1.02);
+      border-color: #b2f0c0;
+      box-shadow: 0 0 40px #3dd68c;
+    }
+
+    .avatar-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* This makes sure your image fills the frame without distortion */
+      display: block;
+    }
+
+    /* fallback text if image doesn't load (rare) */
+    .avatar-frame img[alt] {
+      font-family: 'Fira Code', monospace;
+      background: #152238;
+      color: #3dd68c;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    /* ===== ABOUT SECTION ===== */
+    .section {
+      padding: 5rem 0;
+      border-bottom: 1px solid #1f2a3c;
+    }
+
+    .about-grid {
+      display: flex;
+      gap: 3rem;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .about-text {
+      flex: 2 1 300px;
+    }
+
+    .about-text p {
+      font-size: 1.2rem;
+      color: #c6d3f0;
+      margin-bottom: 1.2rem;
+      background: #111a27;
+      padding: 1rem 1.5rem;
+      border-radius: 16px;
+      border: 1px solid #253448;
+    }
+
+    .skill-badge-container {
+      flex: 1 1 260px;
+      background: #0f1726;
+      border-radius: 24px;
+      padding: 2rem 1.8rem;
+      border: 1px solid #2c405c;
+    }
+
+    .skill-category {
+      margin-bottom: 2rem;
+    }
+
+    .skill-category h3 {
+      color: #3dd68c;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+      border-bottom: 1px dashed #3dd68c;
+      padding-bottom: 0.4rem;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .skill-tag {
+      background: #1d2a3f;
+      color: #b5f0cc;
+      padding: 0.4rem 1.2rem;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border: 1px solid #3dd68c55;
+      font-family: 'Fira Code', monospace;
+    }
+
+    /* ===== PORTFOLIO / PROJECTS (PENTEST THEME) ===== */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .project-card {
+      background: #0e1625;
+      border-radius: 24px;
+      border: 1px solid #263b57;
+      overflow: hidden;
+      transition: 0.2s;
+      box-shadow: 0 10px 20px -5px #00000080;
+    }
+
+    .project-card:hover {
+      border-color: #3dd68c;
+      box-shadow: 0 0 20px #3dd68c33, 0 10px 20px -5px black;
+      transform: translateY(-4px);
+    }
+
+    .card-header {
+      background: #1a253b;
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 1px solid #2f4262;
+    }
+
+    .card-header i {
+      font-size: 1.8rem;
+      color: #3dd68c;
+    }
+
+    .card-header h3 {
+      font-size: 1.3rem;
+      color: white;
+    }
+
+    .card-body {
+      padding: 1.5rem;
+    }
+
+    .card-body p {
+      color: #b7c7ed;
+      margin-bottom: 1.2rem;
+      min-height: 60px;
+    }
+
+    .tool-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 0.8rem;
+      border-top: 1px solid #253f5c;
+      padding-top: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .tool-item {
+      background: #101d2e;
+      color: #a2d6b5;
+      padding: 0.2rem 1rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      border: 1px solid #397755;
+    }
+
+    /* ===== CERTIFICATIONS / BADGES (extra bit) ===== */
+    .certs-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      margin: 3rem 0 1rem;
+    }
+
+    .cert-item {
+      background: #0f1a24;
+      border-radius: 60px;
+      padding: 1rem 2rem;
+      border: 1px solid #3dd68c;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-family: 'Fira Code', monospace;
+      color: #cfecdb;
+    }
+
+    .cert-item i {
+      font-size: 2rem;
+      color: #ffc107;
+    }
+
+    /* ===== CONTACT & FOOTER ===== */
+    .contact-section {
+      background: #080c14;
+      border-bottom: none;
+    }
+
+    .contact-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      background: #101a28;
+      padding: 2.5rem;
+      border-radius: 40px;
+      border: 1px solid #2e4462;
+    }
+
+    .contact-left h2 {
+      font-size: 2rem;
+      color: white;
+      margin-bottom: 0.3rem;
+    }
+
+    .contact-left p {
+      color: #9bb5e0;
+    }
+
+    .contact-email {
+      background: #1d2d44;
+      padding: 0.8rem 2rem;
+      border-radius: 60px;
+      border: 1px solid #3dd68c;
+      color: #3dd68c;
+      font-size: 1.3rem;
+      text-decoration: none;
+      font-family: 'Fira Code', monospace;
+      display: inline-flex;
+      align-items: center;
+      gap: 1rem;
+      transition: 0.2s;
+    }
+
+    .contact-email:hover {
+      background: #263e60;
+      border-color: white;
+      color: white;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      margin: 3rem 0 1.5rem;
+    }
+
+    .social-links a {
+      color: #acccf0;
+      font-size: 2rem;
+      transition: 0.2s;
+    }
+
+    .social-links a:hover {
+      color: #3dd68c;
+      text-shadow: 0 0 8px #3dd68c;
+      transform: translateY(-3px);
+    }
+
+    .footer-copy {
+      text-align: center;
+      padding: 2rem 0 1.5rem;
+      border-top: 1px solid #20324b;
+      color: #6f8bb0;
+      font-family: 'Fira Code', monospace;
+    }
+
+    /* responsive */
+    @media (max-width: 700px) {
+      .navbar { flex-direction: column; gap: 0.8rem; }
+      .nav-links { gap: 1.5rem; }
+      .hero-text h1 { font-size: 2.6rem; }
+      .section-title { font-size: 2rem; white-space: normal; }
+      .hero-avatar { flex-basis: 220px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container navbar">
+      <div class="logo"><a href="#">Muhammad Abid</a></div>
+      <div class="nav-links">
+        <a href="#home">_home</a>
+        <a href="#about">_whoami</a>
+        <a href="#projects">_projects</a>
+        <a href="#contact">_contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO / INTRO with YOUR PICTURE -->
+    <section id="home" class="hero">
+      <div class="container hero-content">
+        <div class="hero-text">
+          <span class="greeting">$ whoami</span>
+          <h1 class="glitch-text">Muhammad Abid <span>pentester</span></h1>
+          <p class="hero-desc">> Software Engineering Student · Aspiring Penetration Tester · Cybersecurity Enthusiast
+Passionate about ethical hacking, vulnerability scanning, and breaking systems to understand how to make them more secure. Always eager to learn more about cybersecurity and advanced penetration testing techniques..</p>
+          <div class="btn-group">
+            <a href="#projects" class="btn primary">$ view --projects</a>
+            <a href="#contact" class="btn outline">./connect</a>
+          </div>
+        </div>
+
+        <!-- YOUR IMAGE GOES HERE -->
+        <div class="hero-avatar">
+          <div class="avatar-frame">
+            <!-- IMPORTANT: Save your photo as "your-pic.jpg" inside the "images" folder -->
+            <img src="images/abid.jpg" alt="Muhammad Abid - Software engineering Student and Pentester">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT (cybersecurity student) -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2 class="section-title"># about --verbose</h2>
+        <div class="about-grid">
+          <div class="about-text">
+            <p><i class="fas fa-terminal" style="color:#3dd68c; margin-right:12px;"></i> 4rd-year software engineering student, passionate about ethical hacking and defensive security. I spend my free time on Learning About Cyber Security and Ethical hacking, reading exploit write-ups, and contributing to open-source security tools.</p>
+            <p><i class="fas fa-shield-halved" style="color:#3dd68c; margin-right:12px;"></i> I believe in "offense informs defense" — my goal is to become a professional pentester and help organizations build resilient systems.</p>
+            <p><i class="fas fa-flag" style="color:#3dd68c; margin-right:12px;"></i> In the World where people love to Learn Zero and One I am intresting to break them and protect them.</p>
+          </div>
+          <div class="skill-badge-container">
+            <div class="skill-category">
+              <h3>🔧 offensive toolkit</h3>
+              <div class="skill-tags">
+                <span class="skill-tag">Burp Suite</span>
+                <span class="skill-tag">nmap</span>
+                <span class="skill-tag">Metasploit</span>
+                <span class="skill-tag">Wireshark</span>
+                <span class="skill-tag">sqlmap</span>
+                <span class="skill-tag">John the Ripper</span>
+              </div>
+            </div>
+            <div class="skill-category">
+              <h3>💻 dev & scripting</h3>
+              <div class="skill-tags">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Bash</span>
+              </div>
+            </div>
+            <div class="skill-category">
+              <h3>📜 certifications</h3>
+              <div class="skill-tags">
+                <span class="skill-tag">CEH (Learning / in progress)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- little extra "code" : stats / boxes -->
+        <!-- <div class="certs-row">
+          <div class="cert-item"><i class="fas fa-crown"></i> HTB: Pro Hacker</div>
+          <div class="cert-item"><i class="fas fa-bug"></i> 7 CVEs disclosed (2024)</div>
+          <div class="cert-item"><i class="fas fa-trophy"></i> 2nd place @ CyberHunt 2024</div>
+        </div> -->
+      </div>
+    </section>
+
+    <!-- PROJECTS / PENTEST PORTFOLIO -->
+    <section id="projects" class="section">
+      <div class="container">
+        <h2 class="section-title">ls -la /projects/</h2>
+        <div class="portfolio-grid">
+
+          <div class="project-card">
+            <div class="card-header">
+             <i class="fas fa-lock"></i>
+              <h3>Password Strength Checking</h3>
+            </div>
+            <div class="card-body">
+              <p>Built a Python program that analyzes password strength using rules like uppercase, lowercase, numbers, and special characters.
+Provides feedback to help users generate more secure passwords </p>
+              <div class="tool-list">
+                <span class="tool-item">Python</span>
+                
+              </div>
+              <a href="https://github.com/mabidafridi/password_Strength_Checking" target="_blank" class="github-link">
+                <i class="fab fa-github"></i> View on GitHub
+                </a>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="card-header">
+             <i class="fas fa-user-secret"></i>
+            <h3>Simple Malware For Encryption of File</h3>
+            </div>
+            <div class="card-body">
+              <p>Developed a Python-based file encryption simulator to demonstrate how ransomware encrypts user files.
+The project was created for cybersecurity learning to understand malware behavior and improve defensive strategies..</p>
+              <div class="tool-list">
+                <span class="tool-item">Python</span>
+                
+              </div>
+              <a href="https://github.com/mabidafridi/Ransomware_4_Encryption_Decryption.git" target="_blank" class="github-link">
+                  <i class="fab fa-github"></i> View on GitHub
+              </a>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="card-header">
+              <i class="fas fa-shield"></i>
+              <h3>Port Scanning </h3>
+            </div> 
+             <div class="card-body">
+              <p>Developed a Python-based Port Scanner that scans target systems to identify open ports and active network services.
+The tool helps analyze network security by detecting exposed ports that could be potential vulnerabilities..</p>
+              <div class="tool-list">
+                <span class="tool-item">Python</span>
+                
+              </div>
+              <a href="https://github.com/mabidafridi/portScanning.git" target="_blank" class="github-link">
+                  <i class="fab fa-github"></i> View on GitHub
+               </a>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="card-header">
+              <i class="fas fa-network-wired"></i>
+              <h3>ARP Spoofing Detector</h3>
+            </div>
+            <div class="card-body">
+              <p>Built a Python tool that analyzes ARP traffic on a network to detect suspicious MAC–IP address mismatches, helping prevent ARP spoofing attacks..</p>
+              <div class="tool-list">
+                <span class="tool-item">python</span>
+                
+              </div>
+              <a href="https://github.com/mabidafridi/arpSnoffing" target="_blank" class="github-link">
+                    <i class="fab fa-github"></i> View on GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT + little code (dynamic year + extra message) -->
+    <section id="contact" class="section contact-section">
+      <div class="container">
+        <div class="contact-flex">
+          <div class="contact-left">
+            <h2 class="section-title" style="color:white; border-right-color:#3dd68c;">$ contact</h2>
+            <p>need a pentest report? want to collaborate on a project?</p>
+          </div>
+          <a href="mailto:muhammadabid2120@gmail.com" class="contact-email"><i class="fas fa-envelope"></i> Muhammad Abid</a>
+        </div>
+
+        <div class="social-links">
+          <a href="https://github.com/mabidafridi" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="www.linkedin.com/in/mabidafridi" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          
+          <a href="www.instagram.com\iabid.afridi" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+
+        </div>
+
+        <div class="footer-copy">
+          <p>© <span id="current-year"></span> abid — "root@mabidafridi:~# echo 'secure the future' "</p>
+          <p style="margin-top:0.5rem; opacity:0.7;"><i class="fas fa-lock" style="color:#3dd68c;"></i> always learning, always pwning labs</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- tiny script: dynamic year & extra interactive 'code' (little bit) -->
+  <script>
+    (function littleExtra() {
+      // set current year
+      document.getElementById('current-year').innerText = new Date().getFullYear();
+
+      // mini interactive: click on any tool-item -> show the tool in console
+      const tools = document.querySelectorAll('.tool-item');
+      tools.forEach(t => {
+        t.addEventListener('click', (e) => {
+          e.stopPropagation();
+          console.log(`[pentest tool] ${t.innerText} selected`);
+          // subtle feedback: change background
+          t.style.background = '#2a4d3e';
+          setTimeout(() => t.style.background = '', 200);
+        });
+      });
+
+      // smooth nav
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const id = link.getAttribute('href').substring(1);
+          document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+        });
+      });
+
+      console.log('%c🔥 init pentest mode with your pic 🔥', 'background: #0f0; color: black; font-size: 12px; padding: 4px;');
+    })();
+  </script>
+</body>
+</html>
