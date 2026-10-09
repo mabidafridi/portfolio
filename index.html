@@ -80,6 +80,8 @@
       justify-content: space-between;
       align-items: center;
       padding: 1.2rem 0;
+      gap: 1rem;
+      flex-wrap: wrap;
     }
 
     .logo a {
@@ -93,9 +95,10 @@
       border-radius: 6px;
       border: 1px solid #3dd68c;
       box-shadow: 0 0 8px #3dd68c55;
+      cursor: pointer;
     }
 
-    .nav-links { display: flex; gap: 2.2rem; flex-wrap: wrap; }
+    .nav-links { display: flex; gap: 2rem; flex-wrap: wrap; }
 
     .nav-links a {
       text-decoration: none;
@@ -105,9 +108,12 @@
       font-size: 1rem;
       letter-spacing: 0.3px;
       font-family: 'Fira Code', monospace;
+      cursor: pointer;
     }
 
     .nav-links a:hover { color: #3dd68c; text-shadow: 0 0 6px #3dd68c; }
+    .nav-links a.highlight { color: var(--gold); }
+    .nav-links a.highlight:hover { text-shadow: 0 0 6px var(--gold); }
 
     /* ===== VIEW SWITCHING ===== */
     .view { display: none; }
@@ -147,9 +153,9 @@
     }
 
     .hero-desc {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       color: #b0bedd;
-      max-width: 600px;
+      max-width: 620px;
       margin-bottom: 2.2rem;
       font-family: 'Fira Code', monospace;
       background: #0e1622cc;
@@ -167,7 +173,7 @@
       font-weight: 600;
       text-decoration: none;
       transition: all 0.2s ease;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       border: 1px solid transparent;
       font-family: 'Fira Code', monospace;
       text-transform: uppercase;
@@ -206,6 +212,7 @@
     .btn.gold:hover {
       background: rgba(255, 193, 7, 0.1);
       box-shadow: 0 0 12px rgba(255, 193, 7, 0.4);
+      transform: translateY(-2px);
     }
 
     /* ===== AVATAR ===== */
@@ -238,7 +245,7 @@
     .about-text { flex: 2 1 300px; }
 
     .about-text p {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       color: #c6d3f0;
       margin-bottom: 1.2rem;
       background: #111a27;
@@ -261,7 +268,7 @@
     .skill-category h3 {
       color: #3dd68c;
       margin-bottom: 1rem;
-      font-size: 1.2rem;
+      font-size: 1.15rem;
       border-bottom: 1px dashed #3dd68c;
       padding-bottom: 0.4rem;
       font-family: 'Fira Code', monospace;
@@ -295,6 +302,8 @@
       overflow: hidden;
       transition: 0.2s;
       box-shadow: 0 10px 20px -5px #00000080;
+      display: flex;
+      flex-direction: column;
     }
 
     .project-card:hover {
@@ -312,11 +321,11 @@
       border-bottom: 1px solid #2f4262;
     }
 
-    .card-header i { font-size: 1.6rem; color: #3dd68c; }
-    .card-header h3 { font-size: 1.15rem; color: white; }
+    .card-header i { font-size: 1.5rem; color: #3dd68c; }
+    .card-header h3 { font-size: 1.1rem; color: white; }
 
-    .card-body { padding: 1.5rem; }
-    .card-body p { color: #b7c7ed; margin-bottom: 1.2rem; min-height: 60px; font-size: 0.95rem; }
+    .card-body { padding: 1.5rem; display: flex; flex-direction: column; flex: 1; }
+    .card-body p { color: #b7c7ed; margin-bottom: 1.2rem; font-size: 0.92rem; flex: 1; }
 
     .tool-list {
       display: flex;
@@ -332,7 +341,7 @@
       color: #a2d6b5;
       padding: 0.2rem 1rem;
       border-radius: 30px;
-      font-size: 0.78rem;
+      font-size: 0.75rem;
       border: 1px solid #397755;
       font-family: 'Fira Code', monospace;
     }
@@ -346,8 +355,9 @@
       border: 1px solid #3dd68c;
       padding: 0.35rem 1rem;
       border-radius: 30px;
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       transition: 0.2s;
+      align-self: flex-start;
     }
     .github-link:hover { background: #3dd68c22; box-shadow: 0 0 10px #3dd68c55; }
 
@@ -446,7 +456,7 @@
       border-radius: 60px;
       border: 1px solid #3dd68c;
       color: #3dd68c;
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       text-decoration: none;
       font-family: 'Fira Code', monospace;
       display: inline-flex;
@@ -475,7 +485,7 @@
       border-top: 1px solid #20324b;
       color: #6f8bb0;
       font-family: 'Fira Code', monospace;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
     }
 
     /* ============================================================
@@ -573,7 +583,7 @@
 
     .cv-summary {
       color: #c6d3f0;
-      font-size: 0.98rem;
+      font-size: 0.96rem;
       background: var(--panel-2);
       border-left: 3px solid var(--accent);
       padding: 1rem 1.3rem;
@@ -630,7 +640,7 @@
       gap: 0.5rem;
       margin-bottom: 0.5rem;
     }
-    .cv-project-header h3 { font-size: 1.02rem; color: #fff; font-weight: 600; }
+    .cv-project-header h3 { font-size: 1rem; color: #fff; font-weight: 600; }
     .cv-project-header .tech {
       font-family: 'Fira Code', monospace;
       font-size: 0.72rem;
@@ -640,12 +650,12 @@
       border-radius: 20px;
       border: 1px solid rgba(61, 214, 140, 0.3);
     }
-    .cv-project p { color: #b7c7ed; font-size: 0.9rem; }
+    .cv-project p { color: #b7c7ed; font-size: 0.88rem; }
     .cv-project a {
       color: var(--accent);
       text-decoration: none;
       font-family: 'Fira Code', monospace;
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       margin-top: 0.5rem;
       display: inline-block;
     }
@@ -680,8 +690,8 @@
       font-size: 1.15rem;
       flex-shrink: 0;
     }
-    .cv-cert h4 { font-size: 0.9rem; color: #fff; margin-bottom: 0.2rem; line-height: 1.3; }
-    .cv-cert span { font-size: 0.76rem; color: var(--muted); font-family: 'Fira Code', monospace; }
+    .cv-cert h4 { font-size: 0.88rem; color: #fff; margin-bottom: 0.2rem; line-height: 1.3; }
+    .cv-cert span { font-size: 0.75rem; color: var(--muted); font-family: 'Fira Code', monospace; }
 
     .cv-footer {
       text-align: center;
@@ -706,14 +716,16 @@
     .cv-actions h2 {
       font-family: 'Fira Code', monospace;
       color: var(--accent);
-      font-size: 1.1rem;
+      font-size: 1.05rem;
     }
     .cv-actions .btn-group { gap: 0.6rem; }
 
     /* ===== PRINT (only CV section prints nicely) ===== */
     @media print {
       body { background: #fff; color: #111; }
-      header, .hero, .section, .contact-section, .cv-actions { display: none !important; }
+      header, .hero, .section, .contact-section, .cv-actions, .cv-footer { display: none !important; }
+      .view { display: none !important; }
+      .view.active { display: block !important; }
       .cv-wrap { padding: 0; }
       .cv {
         box-shadow: none;
@@ -748,7 +760,6 @@
       .cv-project a { color: #0a7a4a; }
       .cv-cert h4 { color: #111; }
       .cv-cert .icon { color: #b8860b; border-color: #e5c76b; background: #fdf6e3; }
-      .cv-footer { background: #f4f6fa; color: #444; }
       .cv-section, .cv-project, .cv-cert { page-break-inside: avoid; }
     }
 
@@ -756,8 +767,8 @@
     @media (max-width: 700px) {
       .navbar { flex-direction: column; gap: 0.8rem; }
       .nav-links { gap: 1.2rem; justify-content: center; }
-      .hero-text h1 { font-size: 2.4rem; }
-      .section-title { font-size: 1.8rem; white-space: normal; }
+      .hero-text h1 { font-size: 2.2rem; }
+      .section-title { font-size: 1.7rem; white-space: normal; }
       .hero-avatar { flex-basis: 220px; }
       .cv-header { padding: 1.8rem 1.5rem; }
       .cv-body { padding: 1.5rem; }
@@ -771,14 +782,14 @@
   <!-- ============ HEADER / NAV ============ -->
   <header>
     <div class="container navbar">
-      <div class="logo"><a href="#" onclick="showView('portfolio'); return false;">Muhammad Abid</a></div>
+      <div class="logo"><a onclick="showView('portfolio','home')">Muhammad Abid</a></div>
       <div class="nav-links">
-        <a href="#" onclick="showView('portfolio','home'); return false;">_home</a>
-        <a href="#" onclick="showView('portfolio','about'); return false;">_whoami</a>
-        <a href="#" onclick="showView('portfolio','certifications'); return false;">_certs</a>
-        <a href="#" onclick="showView('portfolio','projects'); return false;">_projects</a>
-        <a href="#" onclick="showView('portfolio','contact'); return false;">_contact</a>
-        <a href="#" onclick="showView('cv'); return false;">_cv</a>
+        <a onclick="showView('portfolio','home')">_home</a>
+        <a onclick="showView('portfolio','about')">_whoami</a>
+        <a onclick="showView('portfolio','certifications')">_certs</a>
+        <a onclick="showView('portfolio','projects')">_projects</a>
+        <a onclick="showView('portfolio','contact')">_contact</a>
+        <a onclick="showView('cv')" class="highlight">_cv</a>
       </div>
     </div>
   </header>
@@ -796,9 +807,9 @@
           <h1 class="glitch-text">Muhammad Abid <span>pentester</span></h1>
           <p class="hero-desc">> Software Engineering Student · Aspiring Penetration Tester · Cybersecurity Enthusiast.<br>Passionate about ethical hacking, vulnerability scanning, and breaking systems to understand how to make them more secure.</p>
           <div class="btn-group">
-            <a href="#" onclick="showView('portfolio','projects'); return false;" class="btn primary">$ view --projects</a>
-            <a href="#" onclick="showView('portfolio','contact'); return false;" class="btn outline">./connect</a>
-            <a href="#" onclick="showView('cv'); return false;" class="btn gold"><i class="fas fa-id-card" style="margin-right:8px;"></i>VIEW CV</a>
+            <a onclick="showView('portfolio','projects')" class="btn primary">$ view --projects</a>
+            <a onclick="showView('portfolio','contact')" class="btn outline">./connect</a>
+            <a onclick="showView('cv')" class="btn gold"><i class="fas fa-id-card" style="margin-right:8px;"></i>VIEW CV</a>
           </div>
         </div>
         <div class="hero-avatar">
@@ -835,32 +846,4 @@
               </div>
             </div>
             <div class="skill-category">
-              <h3>💻 dev & scripting</h3>
-              <div class="skill-tags">
-                <span class="skill-tag">Python</span>
-                <span class="skill-tag">Bash</span>
-              </div>
-            </div>
-            <div class="skill-category">
-              <h3>📜 certifications</h3>
-              <div class="skill-tags">
-                <span class="skill-tag">Certified Ethical Hacker – Cisco</span>
-                <span class="skill-tag">6-Week Cybersecurity – ShadowSec</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CERTIFICATIONS -->
-    <section id="certifications" class="section">
-      <div class="container">
-        <h2 class="section-title">cat certifications.log</h2>
-        <div class="cert-grid">
-          <div class="cert-card">
-            <div class="cert-card-header">
-              <div class="cert-icon"><i class="fas fa-user-shield"></i></div>
-              <h3>6-Week Cybersecurity Training</h3>
-            </div>
-            <div class="
+              <h3>
