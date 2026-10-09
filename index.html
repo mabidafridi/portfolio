@@ -929,4 +929,518 @@
 
   /* ================= RESPONSIVE ================= */
   @media (max-width:900px){
-    .hero-grid{grid-template-columns:1fr;gap
+    .hero-grid{grid-template-columns:1fr;gap:2.5rem}
+    .portrait-wrap{order:-1}
+    .about-grid{grid-template-columns:1fr}
+    .contact-card{grid-template-columns:1fr;padding:2rem}
+    .nav-links{gap:.2rem}
+    .nav-links a{font-size:.75rem;padding:.4rem .7rem}
+    .chip-1,.chip-2,.chip-3{display:none}
+  }
+  @media (max-width:600px){
+    .section{padding:3.5rem 0}
+    .hero{padding:3rem 0}
+    .cv-top{padding:1.8rem 1.5rem}
+    .cv-body{padding:1.5rem}
+    .cv-id h1{font-size:1.5rem}
+    .nav{padding:.9rem 0}
+  }
+</style>
+</head>
+<body>
+
+<!-- =================== NAV =================== -->
+<header>
+  <div class="container nav">
+    <div class="brand" onclick="showView('portfolio','home')">
+      <div class="brand-dot"></div>
+      <div>
+        <span class="brand-text">Muhammad Abid</span>
+        <span class="brand-sub">/ security</span>
+      </div>
+    </div>
+    <nav class="nav-links">
+      <a data-nav="home" onclick="showView('portfolio','home')">home</a>
+      <a data-nav="about" onclick="showView('portfolio','about')">about</a>
+      <a data-nav="skills" onclick="showView('portfolio','skills')">skills</a>
+      <a data-nav="projects" onclick="showView('portfolio','projects')">projects</a>
+      <a data-nav="certs" onclick="showView('portfolio','certs')">certs</a>
+      <a data-nav="contact" onclick="showView('portfolio','contact')">contact</a>
+      <a class="cta" onclick="showView('cv')"><i class="fas fa-id-card"></i> CV</a>
+    </nav>
+  </div>
+</header>
+
+<!-- =================== PORTFOLIO =================== -->
+<main id="view-portfolio" class="view active">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-left">
+        <div class="hero-badge">
+          <span class="dot"></span>
+          AVAILABLE FOR SOC / PENTEST ROLES
+        </div>
+        <h1>
+          Breaking systems<br>
+          to make them <span class="grad">unbreakable.</span>
+        </h1>
+        <p class="hero-sub">
+          Hi, I'm <strong>Muhammad Abid</strong> — a 4th-year Software Engineering student and
+          aspiring <strong>Penetration Tester</strong>. I build Python security tools,
+          hunt vulnerabilities, and learn offensive security the hands-on way.
+        </p>
+
+        <div class="tags">
+          <span>Python</span>
+          <span>Burp Suite</span>
+          <span>Nmap</span>
+          <span>Metasploit</span>
+          <span>Wireshark</span>
+          <span>Linux</span>
+          <span>Networking</span>
+        </div>
+
+        <div class="actions">
+          <a class="btn primary" onclick="showView('portfolio','projects')">
+            <i class="fas fa-terminal"></i> View Projects
+          </a>
+          <a class="btn gold" onclick="showView('cv')">
+            <i class="fas fa-id-card"></i> View CV
+          </a>
+          <a class="btn ghost" href="images/Muhammad_Abid.pdf" download>
+            <i class="fas fa-download"></i> Download PDF
+          </a>
+        </div>
+      </div>
+
+      <div class="portrait-wrap">
+        <div class="portrait-glow"></div>
+        <div class="portrait">
+          <img src="images/abid.jpg" alt="Muhammad Abid">
+        </div>
+        <div class="floating-chip chip-1">&lt;/&gt; python</div>
+        <div class="floating-chip chip-2">$ nmap -sV</div>
+        <div class="floating-chip chip-3"># CTF player</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">about me</span>
+        <h2>Who I am & <span class="grad">what I do</span></h2>
+        <p>A quick introduction to my background, focus, and what drives me in cybersecurity.</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="glass about-text">
+          <p><i class="fas fa-terminal"></i>I'm a 4th-year <strong>Software Engineering</strong> student with a deep interest in <strong>ethical hacking</strong> and <strong>offensive security</strong>. I spend my free time exploring vulnerabilities, reading exploit write-ups, and building tools that solve real security problems.</p>
+          <p><i class="fas fa-shield-halved"></i>I believe in the principle that <em>"offense informs defense"</em> — understanding how attackers think is the fastest way to build resilient systems. My goal is to become a professional <strong>Penetration Tester</strong>.</p>
+          <p><i class="fas fa-flag"></i>Currently sharpening my skills through CTF challenges, home lab projects, and hands-on labs focused on network security, log analysis, and malware behavior.</p>
+        </div>
+
+        <div class="quick-facts">
+          <div class="fact">
+            <div class="ico"><i class="fas fa-graduation-cap"></i></div>
+            <div>
+              <h4>Education</h4>
+              <p>BS Software Engineering · 4th Year</p>
+            </div>
+          </div>
+          <div class="fact">
+            <div class="ico"><i class="fas fa-bullseye"></i></div>
+            <div>
+              <h4>Target Role</h4>
+              <p>SOC Analyst / Penetration Tester</p>
+            </div>
+          </div>
+          <div class="fact">
+            <div class="ico"><i class="fas fa-map-marker-alt"></i></div>
+            <div>
+              <h4>Location</h4>
+              <p>Pakistan · Open to Remote</p>
+            </div>
+          </div>
+          <div class="fact">
+            <div class="ico"><i class="fas fa-certificate"></i></div>
+            <div>
+              <h4>Certifications</h4>
+              <p>CEH (Cisco) · ShadowSec Training</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">technical skills</span>
+        <h2>Tools & <span class="grad">technologies</span> I work with</h2>
+        <p>Hands-on experience with offensive tooling, scripting, and core security concepts.</p>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-head">
+            <div class="skill-icon"><i class="fas fa-crosshairs"></i></div>
+            <h3>Offensive Security</h3>
+          </div>
+          <div class="skill-list">
+            <span>Burp Suite</span><span>Nmap</span><span>Metasploit</span>
+            <span>sqlmap</span><span>John the Ripper</span><span>Wireshark</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-head">
+            <div class="skill-icon"><i class="fas fa-code"></i></div>
+            <h3>Programming</h3>
+          </div>
+          <div class="skill-list">
+            <span>Python</span><span>Bash</span><span>Linux CLI</span>
+            <span>Regex</span><span>Scripting</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-head">
+            <div class="skill-icon"><i class="fas fa-shield-halved"></i></div>
+            <h3>Security Concepts</h3>
+          </div>
+          <div class="skill-list">
+            <span>Networking</span><span>Vuln Assessment</span>
+            <span>Threat Detection</span><span>Malware Basics</span>
+            <span>Log Analysis</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">hands-on projects</span>
+        <h2>Security tools I <span class="grad">built from scratch</span></h2>
+        <p>Each project was built to explore a real security concept — from network recon to malware behavior.</p>
+      </div>
+
+      <div class="projects-grid">
+
+        <article class="project" onmousemove="tilt(event,this)">
+          <div class="proj-icon"><i class="fas fa-lock"></i></div>
+          <h3>Password Strength Checker</h3>
+          <p>Analyzes password complexity using length, character variety, and pattern rules — gives users actionable feedback to build stronger credentials.</p>
+          <div class="stack"><span>Python</span><span>Regex</span></div>
+          <a class="proj-link" href="https://github.com/mabidafridi/password_Strength_Checking" target="_blank">
+            <i class="fab fa-github"></i> View on GitHub
+          </a>
+        </article>
+
+        <article class="project" onmousemove="tilt(event,this)">
+          <div class="proj-icon"><i class="fas fa-user-secret"></i></div>
+          <h3>Ransomware Simulator</h3>
+          <p>Python-based file encryption/decryption tool built for education — demonstrates how ransomware operates so defenders can better recognize and stop it.</p>
+          <div class="stack"><span>Python</span><span>Crypto</span></div>
+          <a class="proj-link" href="https://github.com/mabidafridi/Ransomware_4_Encryption_Decryption.git" target="_blank">
+            <i class="fab fa-github"></i> View on GitHub
+          </a>
+        </article>
+
+        <article class="project" onmousemove="tilt(event,this)">
+          <div class="proj-icon"><i class="fas fa-network-wired"></i></div>
+          <h3>Python Port Scanner</h3>
+          <p>Multi-threaded port scanner that discovers open ports and active services on a target — used for early-stage network reconnaissance.</p>
+          <div class="stack"><span>Python</span><span>Sockets</span></div>
+          <a class="proj-link" href="https://github.com/mabidafridi/portScanning.git" target="_blank">
+            <i class="fab fa-github"></i> View on GitHub
+          </a>
+        </article>
+
+        <article class="project" onmousemove="tilt(event,this)">
+          <div class="proj-icon"><i class="fas fa-shield-halved"></i></div>
+          <h3>ARP Spoofing Detector</h3>
+          <p>Monitors ARP traffic on a local network, detecting MAC–IP mismatches that indicate man-in-the-middle or spoofing attacks.</p>
+          <div class="stack"><span>Python</span><span>Scapy</span></div>
+          <a class="proj-link" href="https://github.com/mabidafridi/arpSnoffing" target="_blank">
+            <i class="fab fa-github"></i> View on GitHub
+          </a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certs" class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">certifications</span>
+        <h2>Verified <span class="grad">training & credentials</span></h2>
+        <p>Formal training and certifications that back up my hands-on experience.</p>
+      </div>
+
+      <div class="certs-grid">
+        <div class="cert">
+          <div class="cert-icon"><i class="fas fa-user-shield"></i></div>
+          <div>
+            <h3>Certified Ethical Hacker</h3>
+            <p>Cisco Networking Academy</p>
+            <span class="badge"><i class="fas fa-circle-check"></i> Completed</span>
+          </div>
+        </div>
+
+        <div class="cert">
+          <div class="cert-icon"><i class="fas fa-shield"></i></div>
+          <div>
+            <h3>6-Week Cybersecurity Training</h3>
+            <p>ShadowSec</p>
+            <span class="badge"><i class="fas fa-circle-check"></i> Completed</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="contact-card">
+        <div>
+          <span class="kicker">get in touch</span>
+          <h2>Let's build something secure together.</h2>
+          <p>Looking for a security intern, junior pentester, or SOC analyst? I'd love to hear about opportunities to learn and contribute.</p>
+        </div>
+        <div class="contact-actions">
+          <a class="btn primary" href="mailto:muhammadabid2120@gmail.com">
+            <i class="fas fa-envelope"></i> muhammadabid2120@gmail.com
+          </a>
+          <a class="btn ghost" href="https://linkedin.com/in/mabidafridi/" target="_blank">
+            <i class="fab fa-linkedin"></i> Connect on LinkedIn
+          </a>
+        </div>
+      </div>
+
+      <div class="socials">
+        <a href="https://github.com/mabidafridi" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/mabidafridi/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="mailto:muhammadabid2120@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© <span id="year"></span> Muhammad Abid · <span class="heart">built with intent, secured by design</span></p>
+    <p style="margin-top:.4rem;opacity:.6">root@mabidafridi:~# echo "always learning, always pwning labs"</p>
+  </footer>
+</main>
+
+<!-- =================== CV VIEW =================== -->
+<main id="view-cv" class="view">
+  <div class="container">
+    <div class="cv-actions">
+      <h2>~/cv/Muhammad_Abid.pdf</h2>
+      <div class="actions">
+        <a class="btn ghost" onclick="showView('portfolio','home')">
+          <i class="fas fa-arrow-left"></i> Back to Portfolio
+        </a>
+        <a class="btn primary" onclick="window.print()">
+          <i class="fas fa-print"></i> Save as PDF
+        </a>
+      </div>
+    </div>
+
+    <div class="cv-shell">
+      <!-- HEADER -->
+      <div class="cv-top">
+        <div class="cv-avatar">
+          <img src="images/abid.jpg" alt="Muhammad Abid">
+        </div>
+        <div class="cv-id">
+          <h1>Muhammad Abid</h1>
+          <p class="role">Aspiring Penetration Tester · Cybersecurity Enthusiast</p>
+          <div class="cv-contact">
+            <span><i class="fas fa-envelope"></i> muhammadabid2120@gmail.com</span>
+            <a href="https://linkedin.com/in/mabidafridi/" target="_blank"><i class="fab fa-linkedin"></i> linkedin.com/in/mabidafridi</a>
+            <a href="https://github.com/mabidafridi" target="_blank"><i class="fab fa-github"></i> github.com/mabidafridi</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- BODY -->
+      <div class="cv-body">
+
+        <div class="cv-sec">
+          <div class="cv-sec-title"><i class="fas fa-user"></i> Professional Summary</div>
+          <p class="cv-summary">
+            4th-year Software Engineering student with hands-on experience in ethical hacking,
+            vulnerability assessment, and Python security tooling. Passionate about offensive
+            security and building defensive awareness through practical labs and CTF challenges.
+            Seeking an entry-level SOC Analyst or Penetration Testing role.
+          </p>
+        </div>
+
+        <div class="cv-sec">
+          <div class="cv-sec-title"><i class="fas fa-tools"></i> Technical Skills</div>
+          <div class="cv-skills">
+            <div class="cv-skill-block">
+              <h4>Offensive Security</h4>
+              <p>Burp Suite · Nmap · Metasploit · sqlmap · John the Ripper · Wireshark</p>
+            </div>
+            <div class="cv-skill-block">
+              <h4>Programming</h4>
+              <p>Python · Bash · Linux CLI · Regex · Scripting</p>
+            </div>
+            <div class="cv-skill-block">
+              <h4>Security Concepts</h4>
+              <p>Networking · Vulnerability Assessment · Threat Detection · Malware Basics · Log Analysis</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="cv-sec">
+          <div class="cv-sec-title"><i class="fas fa-folder-open"></i> Projects</div>
+
+          <div class="cv-project">
+            <div class="cv-project-head">
+              <h3>Password Strength Checker</h3>
+              <span class="tech">Python</span>
+            </div>
+            <p>Analyzes password complexity using length, character variety, and pattern rules, providing actionable feedback to help users create stronger credentials.</p>
+            <a href="https://github.com/mabidafridi/password_Strength_Checking" target="_blank">
+              <i class="fab fa-github"></i> github.com/mabidafridi/password_Strength_Checking
+            </a>
+          </div>
+
+          <div class="cv-project">
+            <div class="cv-project-head">
+              <h3>Ransomware Simulator</h3>
+              <span class="tech">Python</span>
+            </div>
+            <p>Python-based file encryption/decryption tool demonstrating how ransomware operates — built for education and defensive awareness.</p>
+            <a href="https://github.com/mabidafridi/Ransomware_4_Encryption_Decryption.git" target="_blank">
+              <i class="fab fa-github"></i> github.com/mabidafridi/Ransomware_4_Encryption_Decryption
+            </a>
+          </div>
+
+          <div class="cv-project">
+            <div class="cv-project-head">
+              <h3>Python Port Scanner</h3>
+              <span class="tech">Python</span>
+            </div>
+            <p>Multi-threaded port scanner that identifies open ports and active services on target systems for network reconnaissance.</p>
+            <a href="https://github.com/mabidafridi/portScanning.git" target="_blank">
+              <i class="fab fa-github"></i> github.com/mabidafridi/portScanning
+            </a>
+          </div>
+
+          <div class="cv-project">
+            <div class="cv-project-head">
+              <h3>ARP Spoofing Detector</h3>
+              <span class="tech">Python</span>
+            </div>
+            <p>Monitors ARP traffic for MAC–IP mismatches, detecting man-in-the-middle and spoofing attempts on local networks.</p>
+            <a href="https://github.com/mabidafridi/arpSnoffing" target="_blank">
+              <i class="fab fa-github"></i> github.com/mabidafridi/arpSnoffing
+            </a>
+          </div>
+        </div>
+
+        <div class="cv-sec">
+          <div class="cv-sec-title"><i class="fas fa-certificate"></i> Certifications & Training</div>
+          <div class="cv-certs-grid">
+            <div class="cv-cert">
+              <div class="ico"><i class="fas fa-user-shield"></i></div>
+              <div>
+                <h4>Certified Ethical Hacker</h4>
+                <span>Cisco · Completed</span>
+              </div>
+            </div>
+            <div class="cv-cert">
+              <div class="ico"><i class="fas fa-shield"></i></div>
+              <div>
+                <h4>6-Week Cybersecurity Training</h4>
+                <span>ShadowSec · Completed</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</main>
+
+<script>
+  /* ============ VIEW SWITCHING ============ */
+  function showView(viewName, sectionId){
+    document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+
+    if(viewName === 'cv'){
+      document.getElementById('view-cv').classList.add('active');
+      setActiveNav(null);
+      window.scrollTo({top:0, behavior:'smooth'});
+    } else {
+      document.getElementById('view-portfolio').classList.add('active');
+      setActiveNav(sectionId || 'home');
+      if(sectionId){
+        const el = document.getElementById(sectionId);
+        if(el){
+          setTimeout(() => {
+            const offset = 80;
+            const top = el.getBoundingClientRect().top + window.pageYOffset - offset;
+            window.scrollTo({top, behavior:'smooth'});
+          }, 50);
+        }
+      } else {
+        window.scrollTo({top:0, behavior:'smooth'});
+      }
+    }
+  }
+
+  function setActiveNav(id){
+    document.querySelectorAll('.nav-links a[data-nav]').forEach(a => {
+      a.classList.toggle('active', a.dataset.nav === id);
+    });
+  }
+
+  /* ============ YEAR ============ */
+  document.getElementById('year').innerText = new Date().getFullYear();
+
+  /* ============ CURSOR TILT ON PROJECTS ============ */
+  function tilt(e, el){
+    const rect = el.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+    el.style.setProperty('--mx', x + '%');
+    el.style.setProperty('--my', y + '%');
+  }
+
+  /* ============ SCROLL SPY ============ */
+  const sections = ['home','about','skills','projects','certs','contact'];
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting && document.getElementById('view-portfolio').classList.contains('active')){
+        setActiveNav(entry.target.id);
+      }
+    });
+  }, { rootMargin: '-45% 0px -55% 0px' });
+
+  window.addEventListener('load', () => {
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if(el) observer.observe(el);
+    });
+    setActiveNav('home');
+  });
+</script>
+</body>
+</html>
